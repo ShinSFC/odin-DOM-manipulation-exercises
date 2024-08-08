@@ -27,10 +27,30 @@
     </div>
 
     <ul>
-
     </ul>
 
     <script>
+      const list = document.querySelector("ul");
+      const input = document.querySelector("input");
+      const addBtn = document.querySelector("button");
+
+      addBtn.addEventListener("click", () => {
+        let inputValue = input.value; //this works to console log input
+        const listItem = document.createElement("li");
+        const span = document.createElement("span");
+        const delBtn = document.createElement("button");
+        listItem.appendChild(span);
+        listItem.appendChild(delBtn);
+        span.textContent = inputValue;
+        delBtn.textContent = "Delete";
+        delBtn.addEventListener("click", () => {
+          listItem.remove();
+        });
+        list.appendChild(listItem); 
+        inputValue = '';
+        console.log(inputValue);
+        input.focus();
+      });
 
     </script>
   </body>
