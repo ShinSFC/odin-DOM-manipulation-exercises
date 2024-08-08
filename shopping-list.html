@@ -31,7 +31,7 @@
 
     <script>
       const list = document.querySelector("ul");
-      const input = document.querySelector("input");
+      let input = document.querySelector("input");
       const addBtn = document.querySelector("button");
 
       addBtn.addEventListener("click", () => {
@@ -47,11 +47,9 @@
           listItem.remove();
         });
         list.appendChild(listItem); 
-        inputValue = '';
-        console.log(inputValue);
+        document.getElementById('item').value = '';
         input.focus();
       });
-
     </script>
   </body>
 </html>
